@@ -3,6 +3,7 @@ import '../App.css';
 
 import { Chart, registerables } from 'chart.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { flushSync } from 'react-dom';
 
 Chart.register(...registerables);
 
@@ -72,41 +73,86 @@ function Markbook() {
 
                         val /= vnumbers.length;
 
-                        document.getElementById('txtf').textContent = "Your average is a: " + val + "%";
-
-                        reloadcanvas();
-                    }
-                }>My Average</button>
-                <h4 id="txtf" className="txt-av">No average calculated</h4>
-
-                <button className="btn-simple1" onClick={ 
-                    function(e) { 
-                        vnumbers = [];
-                        vdts = [
-                            {
-                                label: 'Average Grade',
-                                data: [],
-                                backgroundColor: [
-                                    'rgba(255, 206, 86, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255, 206, 86, 1)'
-                                ],
-                                borderWidth: 2
-                            }
-                        ];
-                        vdata.datasets = vdts;
-                        vdata.labels = [];
+                        document.getElementById('txtf').textContent = "Your average is a: " + Math.round(val) + "%";
 
                         if (myChart != undefined || myChart != null)
                                 myChart.destroy();
 
                         reloadcanvas();
                     }
-                }>Clear Table</button>
+                }>My Average</button>
+                <button className="btn-simple3" id="btn-4" onClick={ 
+                    function(e) { 
+                        vnumbers = [];
+                        vdata.labels = [];
+                        myChart.data.labels = [];
+                        myChart.data.datasets = [{
+                            label: 'Average Grade',
+                            data: vnumbers,
+                            backgroundColor: [
+                                'rgba(255, 206, 86, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 206, 86, 1)'
+                            ],
+                            borderWidth: 2
+                        }];
 
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
 
-                <canvas id="markCanvas" className="maincanvas" width="800" height="600"/>
+                        reloadcanvas();
+                    }
+                }>Clear Graph (Reset)</button>
+                <h4 id="txtf" className="txt-av">No average calculated</h4>
+
+                <div class="dropdown">
+                <button class="dropbtn">Types of Graphs</button>
+                <div class="dropdown-content">
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'line';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Line Graph</button>
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'bar';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Bar Graph</button>
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'radar';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Radar Graph</button>
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'bubble';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Bubble Graph</button>
+                </div>
+                </div>
+
+                <canvas id="markCanvas" className="maincanvas" width="1200" height="700"/>
             </header>
         </div>
     );
@@ -132,7 +178,7 @@ var vdts = [
 ];
 
 var vdata = {
-    labels: [],
+    labels: [ "Science", "Math", "English", "Careers", "Civics" ],
     datasets: vdts
 };
 
@@ -141,8 +187,9 @@ var vtype = 'bar';
 var myChart = new Chart();
 
 
-window.onload = reloadcanvas;
-window.open = reloadcanvas;
+window.onload = reloadcanvas();
+window.open = reloadcanvas();
+window.onfocus = reloadcanvas();
 
 function reloadcanvas() 
 {
