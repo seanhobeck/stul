@@ -5,16 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Chart, registerables } from 'chart.js';
-import { Router, Switch, Route } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 Chart.register(...registerables);
 
 
 ReactDOM.render(
-  <Router> 
-    <App /> 
-  </Router>,
+    <Router>
+    <App />
+    </Router>,
   document.getElementById('root')
 );
 

@@ -4,9 +4,9 @@ import '../App.css';
 
 function Outliner() {
     return (
-        <outliner>
+        <div className="outliner">
             Outliner
-        </outliner>
+        </div>
     );
 }
 

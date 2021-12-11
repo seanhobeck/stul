@@ -4,9 +4,11 @@ import '../App.css';
 
 function Citation() {
     return (
-        <citation>
-            Citation
-        </citation>
+        <div className="citation">
+            <header className="citation-header">
+
+            </header>
+        </div>
     );
 }
 
