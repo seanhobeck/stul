@@ -30,13 +30,11 @@ function App() {
             }
           }>Outliner</button>
 
-          <Routes exact path="/citation" component={Citation}>
           <button className="btn-simple3" onClick={
             function(e) {
 
             }
           }>Citation Machine</button>
-          </Routes>
         </div>
         
         <div className="faqc"> Frequently Asked Questions</div>
