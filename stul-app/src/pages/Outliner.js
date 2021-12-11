@@ -2,12 +2,6 @@ import React from 'react';
 import '../App.css';
 
 
-function printwebpage(page) 
-{
-   fetch(page).then(response => response.headers).catch(error => alert("Unable to get webpage, bad link?"));
-}
-
-
 function Outliner() {
     return (
         <div className="markbook-section">
@@ -20,7 +14,21 @@ function Outliner() {
                         var val = document.getElementById('getlnk').value;
 
                         if(val != undefined && val != null && val != '') {
-                            printwebpage(val);
+                            fetch(val, {
+                                method: 'POST', 
+                                mode: 'no-cors',
+                                credentials: 'same-origin',
+                                headers: {
+                                  'Content-Type': 'application/json',
+                                }})
+                                .then((response) => response.text())
+                                .then((html) => {
+                                    console.log(html);
+                                    document.getElementById("txtf").innerHTML = html;
+                                })
+                                .catch((error) => {
+                                    alert("Inside error");
+                                });
                         }
                         else 
                             alert("Not a link, please paste one in the input field.");
