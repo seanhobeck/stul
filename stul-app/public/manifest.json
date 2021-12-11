@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Stul",
+  "name": "Stul - A utility app for students",
   "icons": [
     {
       "src": "favicon.ico",

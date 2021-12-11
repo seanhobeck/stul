@@ -23,6 +23,7 @@ reportWebVitals();
 
 const ctx = document.getElementById('myCanvas');
 
+/*
 var myChart = new Chart(ctx, {
   type: 'bar',
     data: {
@@ -57,3 +58,4 @@ var myChart = new Chart(ctx, {
         }
     }
   });
+  */

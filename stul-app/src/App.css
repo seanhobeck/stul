@@ -1,5 +1,5 @@
 .stul {
-  text-align: center;
+  background-color: #303336;
 }
 
 .stul-logo {
@@ -16,16 +16,82 @@
 .stul-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.top-header {
+  font-family: 'Cairo', sans-serif;
+  font-weight: lighter;
+  font-size: 52px;
+  position: relative;
+  vertical-align: top; 
+  text-align: center;
+}
+
+.wrapper {
+  text-align: center;
+  align-content: center;
+}
+
+.btn-simple1, .btn-simple2 {
+  margin-right:50px;
+  align-self: center;
+  height: 40px;
+  width: 100px;
+  background-color: #494d52;
+  cursor: pointer;
+  border-radius: 12px;
+  border-color: #494d52;
+  box-shadow: 0px 0px 0px transparent;
+  border: 2px solid #313438;
+  text-shadow: 0px 0px 0px transparent;
+	color: white;
+  font-family: 'Cairo', sans-serif;
+}
+
+.seperator {
+  border: 3px solid rgb(31, 31, 39);
+  padding: 0px;
+  top: -10px;
+}
+
+.btn-simple3 {
+  margin-right:50px;
+  align-self: center;
+  height: 40px;
+  width: 160px;
+  background-color: #494d52;
+  cursor: pointer;
+  border-radius: 12px;
+  border-color: #494d52;
+  box-shadow: 0px 0px 0px transparent;
+  border: 2px solid #313438;
+  text-shadow: 0px 0px 0px transparent;
+	color: white;
+  font-family: 'Cairo', sans-serif;
+}
+
+.faqc {
+  color: #ffffff;
+  text-shadow: 0px 0px 0px transparent;
+  font-family: 'Cairo', sans-serif;
+  font-weight: lighter;
+  font-size: 21px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 50px;
+  top: 250px;
+};
+
+.faqc-a {
+  font-size: 16px;
+};
+
 .stul-link {
   color: #61dafb;
+  display: flex;
 }
 
 @keyframes stull-logo-spin {
