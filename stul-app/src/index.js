@@ -5,14 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Chart, registerables } from 'chart.js';
+import { Router, Switch, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 Chart.register(...registerables);
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router> 
+    <App /> 
+  </Router>,
   document.getElementById('root')
 );
 
@@ -21,7 +23,6 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-const ctx = document.getElementById('myCanvas');
 
 /*
 var myChart = new Chart(ctx, {

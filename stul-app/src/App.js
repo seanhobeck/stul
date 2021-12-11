@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Router, Switch, Route } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
+import Markbook from './pages/Markbook.js';
+import Outliner from './pages/Outliner.js';
+import Citation from './pages/Citation.js';
 
-const Citation = () => (
-  <div>
-    <h2>Citation</h2>
-  </div>
-);
 
 
 function App() {
   return (
     <div className="stul">
       <header className="stul-header">
-        <header className="top-header">Stul</header>
-        <div className="seperator" width="1000px"></div>
-        <div className="wrapper">
+          <header className="top-header">Stul</header>
+          <div className="seperator" width="1000px"></div>
+          <div className="wrapper">
           <button className="btn-simple1" onClick={
             function(e) {
 
@@ -30,22 +29,26 @@ function App() {
             }
           }>Outliner</button>
 
+          <Markbook/>
+
           <button className="btn-simple3" onClick={
             function(e) {
 
             }
           }>Citation Machine</button>
-        </div>
+          </div>
         
-        <div className="faqc"> Frequently Asked Questions</div>
+          <div className="faqc"> Frequently Asked Questions</div>
 
-        <div className="faqc">
+          <div className="faqc">
           Q: What is Stul Made with?
-        </div>
+          </div>
 
-        <div className="faqc">Stul is made with React and Chart.js</div>
-      </header>
-    </div>
+          <div className="faqc">Stul is made with React and Chart.js</div>
+        </header>
+
+        <Route path="/markbook" component={Markbook}/>
+      </div>
   );
 }
 
