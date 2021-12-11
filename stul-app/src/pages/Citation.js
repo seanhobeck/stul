@@ -4,9 +4,9 @@ import '../App.css';
 
 function Citation() {
     return (
-        <div className="citation">
-            <header className="citation-header">
-
+        <div className="markbook-section">
+            <header className="stul-header">
+                <header className="top-header">Citation Machine</header>
             </header>
         </div>
     );

@@ -107,7 +107,7 @@
 
 .iptfld {
   align-self: center;
-  margin-left: 175px;
+  margin-left: 50px;
   height: 35px;
   width: 100px;
   background-color: #494d52;
@@ -117,7 +117,66 @@
   border: 2px solid #313438;
   text-shadow: 0px 0px 0px transparent;
 	color: white;
+  text-align: center;
   font-family: 'Cairo', sans-serif;
+}
+
+.iptfld2 {
+  align-self: center;
+  margin-left: 50px;
+  height: 35px;
+  width: 350px;
+  background-color: #494d52;
+  border-radius: 12px;
+  border-color: #494d52;
+  box-shadow: 0px 0px 0px transparent;
+  border: 2px solid #313438;
+  text-shadow: 0px 0px 0px transparent;
+	color: white;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.txt-av {
+  margin-left: 815px;
+  align-self: center;
+  text-align: center;
+  height: 60px;
+  width: 100px;
+  background-color: transparent;
+  border-radius: 12px;
+  border-color: #494d52;
+  box-shadow: 0px 0px 0px transparent;
+  border: 2px solid #313438;
+  text-shadow: 0px 0px 0px transparent;
+	color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.txt-empty {
+  margin-left: 47.5%;
+  align-self: center;
+  text-align: center;
+  height: 60px;
+  width: 100px;
+  background-color: transparent;
+  border-radius: 12px;
+  border-color: #494d52;
+  box-shadow: 0px 0px 0px transparent;
+  border: 2px solid #313438;
+  text-shadow: 0px 0px 0px transparent;
+	color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.maincanvas {
+  align-self: center;
+  text-align: center;
+  align-items: center;
 }
 
 .dropdown {

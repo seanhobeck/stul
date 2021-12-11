@@ -19,7 +19,6 @@ function Markbook() {
                         var val = document.getElementById('addmark').value;
 
                         if(val != undefined && val != null && val != '' && vnumbers.length != vdata.labels.length && parseFloat(val) > 0) {
-                            console.log(parseFloat(val));
                             vnumbers.push(parseFloat(val));
                         }
                         else {
@@ -56,8 +55,58 @@ function Markbook() {
                     }
                 }>Add a Label</button>
 
+                <button className="btn-simple1" onClick={ 
+                    function(e) { 
+                        var val = 0;
 
-                <canvas id="markCanvas" width="800" height="800"/>
+                        if (vnumbers.length == 0)
+                        {
+                            alert("There is no marks to calculate a average for.");
+                            return;
+                        }
+
+                        for (const v of vnumbers) 
+                        {
+                            val += v;
+                        }
+
+                        val /= vnumbers.length;
+
+                        document.getElementById('txtf').textContent = "Your average is a: " + val + "%";
+
+                        reloadcanvas();
+                    }
+                }>My Average</button>
+                <h4 id="txtf" className="txt-av">No average calculated</h4>
+
+                <button className="btn-simple1" onClick={ 
+                    function(e) { 
+                        vnumbers = [];
+                        vdts = [
+                            {
+                                label: 'Average Grade',
+                                data: [],
+                                backgroundColor: [
+                                    'rgba(255, 206, 86, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 206, 86, 1)'
+                                ],
+                                borderWidth: 2
+                            }
+                        ];
+                        vdata.datasets = vdts;
+                        vdata.labels = [];
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Clear Table</button>
+
+
+                <canvas id="markCanvas" className="maincanvas" width="800" height="600"/>
             </header>
         </div>
     );
@@ -70,7 +119,7 @@ var vnumbers = [
 
 var vdts = [
     {
-        label: '# of Votes',
+        label: 'Average Grade',
         data: vnumbers,
         backgroundColor: [
             'rgba(255, 206, 86, 0.2)'
