@@ -23,14 +23,6 @@ const Home = () => {
     }
   }>Mark Book</button>
   </Link>
-
-  <Link to="/outliner">
-  <button className="btn-simple2" onClick={
-    function(e) {
-
-    }
-  }>Outliner</button>
-  </Link>
   </div>
 
   <div className="faqc"> This was made for the IRHS Hackathon</div>
@@ -48,7 +40,6 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}></Route>
         <Route path="/markbook" element={<Markbook/>}></Route>
-        <Route path="/outliner" element={<Outliner/>}></Route>
       </Routes>
     </div>
   );

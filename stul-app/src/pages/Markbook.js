@@ -13,6 +13,41 @@ function Markbook() {
         <div className="markbook-section">
             <header className="stul-header">
                 <header className="top-header">Markbook</header>
+                <div class="dropdown">
+                <button className="dropbtn">Types of Graphs</button>
+                <div class="dropdown-content">
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'line';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Line Graph</button>
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'bar';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Bar Graph</button>
+                <button className="btn-simple2" id="btn-6" onClick={ 
+                    function(e) { 
+                        vtype = 'radar';
+
+                        if (myChart != undefined || myChart != null)
+                                myChart.destroy();
+
+                        reloadcanvas();
+                    }
+                }>Radar Graph</button>
+                </div>
+                </div>
 
                 <input type="text" id="addmark" className="iptfld"></input>
                 <button className="btn-simple1" onClick={ 
@@ -105,52 +140,6 @@ function Markbook() {
                     }
                 }>Clear Graph (Reset)</button>
                 <h4 id="txtf" className="txt-av">No average calculated</h4>
-
-                <div class="dropdown">
-                <button class="dropbtn">Types of Graphs</button>
-                <div class="dropdown-content">
-                <button className="btn-simple2" id="btn-6" onClick={ 
-                    function(e) { 
-                        vtype = 'line';
-
-                        if (myChart != undefined || myChart != null)
-                                myChart.destroy();
-
-                        reloadcanvas();
-                    }
-                }>Line Graph</button>
-                <button className="btn-simple2" id="btn-6" onClick={ 
-                    function(e) { 
-                        vtype = 'bar';
-
-                        if (myChart != undefined || myChart != null)
-                                myChart.destroy();
-
-                        reloadcanvas();
-                    }
-                }>Bar Graph</button>
-                <button className="btn-simple2" id="btn-6" onClick={ 
-                    function(e) { 
-                        vtype = 'radar';
-
-                        if (myChart != undefined || myChart != null)
-                                myChart.destroy();
-
-                        reloadcanvas();
-                    }
-                }>Radar Graph</button>
-                <button className="btn-simple2" id="btn-6" onClick={ 
-                    function(e) { 
-                        vtype = 'bubble';
-
-                        if (myChart != undefined || myChart != null)
-                                myChart.destroy();
-
-                        reloadcanvas();
-                    }
-                }>Bubble Graph</button>
-                </div>
-                </div>
 
                 <canvas id="markCanvas" className="maincanvas" width="1200" height="700"/>
             </header>
