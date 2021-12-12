@@ -1,5 +1,5 @@
 # stul
-Stul is a student utilities app meant to make students lifes easier.
+Stul is a markbook meant to help students track their grades.
 
 ### `yarn start`
 
